@@ -5,6 +5,9 @@ import (
 
 	stdlog "log"
 	"path/filepath"
+
+	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/cosmos-sdk/x/auth"
 )
 
 //const appName = "HowellApp"
@@ -12,6 +15,13 @@ import (
 var (
 	// DefaultNodeHome defines default home directories for howelld
 	DefaultNodeHome string
+
+	// ModuleBasics = The ModuleBasicManager is in charge of setting up basic,
+	// non-dependant module elements, such as codec registration
+	// and genesis verification.
+	ModuleBasics = module.NewBasicManager(
+		auth.AppModuleBasic{},
+	)
 
 )
 

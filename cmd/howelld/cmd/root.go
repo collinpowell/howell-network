@@ -14,7 +14,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	encodingConfig := howellapp.MakeEncodingConfig()
 
 
-	fmt.Print(encodingConfig)
+	fmt.Println(encodingConfig)
 
 	rootCmd := &cobra.Command{
 		Use:   "howelld",
